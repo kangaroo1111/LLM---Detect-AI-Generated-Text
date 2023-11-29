@@ -3,14 +3,9 @@ from sklearn.ensemble import VotingClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression, SGDClassifier
 
-EXTERNAL_AI_GENERATED_DATA_SET = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT" \
-                              "-jaYV8T5bqlFkFZ2lJkrurQDKI0rHkC1e5KMRPgiEhT8KiQjp0EeBp0F7TxeIVcxp6l3PyuJJc8Zd/pub" \
-                              "?output=csv"
-TRAIN_ESSAYS_PATH = "https://docs.google.com/spreadsheets/d/e/2PACX" \
-                    "-1vSul63c1iqb7gOwuJlTNyd_LFR_cnKd0WoIc_3PT5GmpEmt0SYcbTV8eFC790xPEXGjdlZs5H2RXyq4/pub?gid" \
-                    "=1027790721&single=true&output=csv"
-TEST_ESSAYS_PATH = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vReBi6Lb_-RgoRjFu4N8Fjt93dVvYLmwghZjpQ7XolAd3' \
-                   '-sNxMylPoEUYI5PvnQYMSjstkzczVJvKCd/pub?gid=1839849903&single=true&output=csv'
+EXTERNAL_AI_GENERATED_DATA_SET = "daigt_external_dataset - daigt_external_dataset.csv"
+TRAIN_ESSAYS_PATH = "train_essays_RDizzl3_seven_v1 - train_essays_RDizzl3_seven_v1.csv"
+TEST_ESSAYS_PATH = 'test_essays - test_essays.csv'
 
 
 def prepare_dataframe_from_csv(csv_file_name):
