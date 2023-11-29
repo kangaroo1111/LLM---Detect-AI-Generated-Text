@@ -25,7 +25,7 @@ def prepare_dataframe_from_csv(csv_file_name):
 
 def generate_submission_csv_from_predictions(preds_test):
     print("Generating Submission CSV from Predictions")
-    pd.DataFrame({'id': test_essay_df["id"], 'generated': preds_test}).to_csv('submission.csv', index=False)
+    return pd.DataFrame({'id': test_essay_df["id"], 'generated': preds_test}).to_csv('submission.csv', index=False)
 
 
 def create_voting_classifier():
@@ -61,3 +61,9 @@ if __name__ == '__main__':
     predictions = voting_classifier.predict_proba(testing_data)[:, 1]
 
     generate_submission_csv_from_predictions(predictions)
+    predictions_csv = pd.read_csv('submission.csv')
+
+    sample = pd.read_csv('kaggle/input/llm-detect-ai-generated-text/sample_submission.csv')
+    sample['generated'] = predictions_csv['generated']
+    sample['id'] = predictions_csv['id']
+    sample.to_csv('submission.csv', index=False)
