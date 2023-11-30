@@ -47,7 +47,7 @@ if __name__ == '__main__':
     external_df = prepare_dataframe_from_csv(EXTERNAL_AI_GENERATED_DATA_SET)
     training_essay_df = pd.read_csv(TRAIN_ESSAYS_PATH)
     training_essay_df = pd.concat([training_essay_df, external_df])
-    test_essay_df = pd.read_csv(TEST_ESSAYS_PATH)
+    test_essay_df = pd.read_csv("kaggle/input/llm-detect-ai-generated-text/test_essays.csv")
 
     data_frame = pd.concat([training_essay_df['text'], test_essay_df['text']], axis=0)
 
@@ -61,9 +61,3 @@ if __name__ == '__main__':
     predictions = voting_classifier.predict_proba(testing_data)[:, 1]
 
     generate_submission_csv_from_predictions(predictions)
-    predictions_csv = pd.read_csv('submission.csv')
-
-    sample = pd.read_csv('kaggle/input/llm-detect-ai-generated-text/sample_submission.csv')
-    sample['generated'] = predictions_csv['generated']
-    sample['id'] = predictions_csv['id']
-    sample.to_csv('submission.csv', index=False)
