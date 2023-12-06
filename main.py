@@ -3,9 +3,8 @@ from sklearn.ensemble import VotingClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression, SGDClassifier
 
-EXTERNAL_AI_GENERATED_DATA_SET = "daigt_external_dataset - daigt_external_dataset.csv"
-TRAIN_ESSAYS_PATH = "train_essays_RDizzl3_seven_v1 - train_essays_RDizzl3_seven_v1.csv"
-TEST_ESSAYS_PATH = 'test_essays - test_essays.csv'
+EXTERNAL_AI_GENERATED_DATA_SET = "kaggle/input/external-data/daigt_external_dataset - daigt_external_dataset.csv"
+TRAIN_ESSAYS_PATH = "kaggle/input/external-data/train_essays_RDizzl3_seven_v1 - train_essays_RDizzl3_seven_v1.csv"
 
 
 def prepare_dataframe_from_csv(csv_file_name):
