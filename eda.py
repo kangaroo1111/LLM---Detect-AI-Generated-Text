@@ -8,6 +8,7 @@ from sklearn.metrics import ConfusionMatrixDisplay
 
 
 VERBOSE = False
+idf = False
 
 #read in dataset
 df = pd.read_csv("kaggle/input/external-data/train_preprocessed_fixed.csv")
@@ -16,7 +17,7 @@ X,y = df["text"],df["label"]
 data_train, data_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=0)
 
 vectorizer = TfidfVectorizer(sublinear_tf=True, max_df=0.5, min_df=5,
-                             max_features=1000,ngram_range=(1,3))
+                             max_features=1000,ngram_range=(1,3),use_idf=idf)
 
 X_train = vectorizer.fit_transform(data_train)
 X_test = vectorizer.transform(data_test)
