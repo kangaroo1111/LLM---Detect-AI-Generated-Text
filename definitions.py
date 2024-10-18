@@ -117,13 +117,3 @@ def predict_v2(text, prompt, ai):
 
 
 model1 = LLM_model('gpt2', 4096, with_prompt = True)
-
-df = pd.read_csv("C:/llm-det/llm-detect-ai-generated-text/train_essays.csv")
-pf = pd.read_csv("C:/llm-det/llm-detect-ai-generated-text/train_prompts.csv")
-
-train_df = {'features':[predict_v2(df['text'][i], pf['source_text'][df['prompt_id'][i]]+pf['instructions'][df['prompt_id'][i]], model1) for i in range(len(df['text']))],
-           'labels': df['generated']}
-
-train_df['features'] = pad_sequences(train_df['features'], maxlen=10000, padding='post', truncating='post', value=0.0)
-
-train_df.to_csv("C:/llm-det/llm-detect-ai-generated-text/train_df.csv")
