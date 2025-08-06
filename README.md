@@ -18,3 +18,14 @@ Methods:
 --Self-attention works such that the last hidden state will contain information about the whole text
 
 Results:
+Aproach 1: Next word probablilities
+# Using only gpt-2 and 10 split points per text, we get the following results: Test Accuracy: 0.6225
+# Classification Report:
+#               precision    recall  f1-score   support
+# 
+#            0     0.7027    0.5752    0.6326       226
+#            1     0.5535    0.6839    0.6118       174
+# 
+#     accuracy                         0.6225       400
+#    macro avg     0.6281    0.6296    0.6222       400
+# weighted avg     0.6378    0.6225    0.6236       400
