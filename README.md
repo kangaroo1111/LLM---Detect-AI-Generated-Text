@@ -32,12 +32,13 @@ Aproach 1: Next word probablilities \
     macro avg     0.6281    0.6296    0.6222       400
  weighted avg     0.6378    0.6225    0.6236       400
 
- Approach 2: Extract last hidden state \
+ Approach 2: Extract last hidden state 
  
 
 
-Future Strategies: \
+Future Strategies: 
 - Directly use a classification model (eg Mistral for text classification) and train it to classify human written vs AI generated
 - Ensemble models: classify using last hidden states from multiple models and take a weighted vote
 - True next word (baseline startegy) but with more split points, and compare with multiple models if computational resources allow
+
 
