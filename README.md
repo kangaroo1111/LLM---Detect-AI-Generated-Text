@@ -31,14 +31,61 @@ Aproach 1: Next word probablilities \
     macro avg     0.6281    0.6296    0.6222       400
  weighted avg     0.6378    0.6225    0.6236       400
 
- Approach 2: Extract last hidden state 
- 
+ Approach 2: Extract last hidden state \
+ - Model: gpt-2 \
+ Results:
+
+ Test Accuracy: 0.9500
+
+Confusion Matrix:
+            Pred Human  Pred AI
+True Human         223        3
+True AI             17      157
+
+- Model: llama_3_2_1B
+
+Test Accuracy: 0.9725
+
+Confusion Matrix:
+            Pred Human  Pred AI
+True Human         223        3
+True AI              8      166
+
+- Model: gemma-2-2b
+
+  Test Accuracy: 0.9750
+
+Confusion Matrix:
+            Pred Human  Pred AI
+True Human         224        2
+True AI              8      166
+
+
+Additional Observations:
+- gpt-2 identified ~750 features, out of which 6 had an importance score > 0.015
+- llama identified ~2000 features, only 4 of which had an importance score > 0.015
+- the accuracy roughly decreases with respect to text length:
+   Accuracy by Text-Length Category:
+    Category '300-399':
+      Number of samples = 118
+      Accuracy = 0.9492
+    Category '400-499':
+      Number of samples = 72
+      Accuracy = 0.9583
+    Category '<300':
+      Number of samples = 131
+      Accuracy = 0.9618
+    Category '≥500':
+      Number of samples = 79
+      Accuracy = 0.9241
 
 
 Future Strategies: 
 - Directly use a classification model (eg Mistral for text classification) and train it to classify human written vs AI generated
+- Test more models
 - Ensemble models: classify using last hidden states from multiple models and take a weighted vote
 - True next word (baseline startegy) but with more split points, and compare with multiple models if computational resources allow
+
 
 
 
