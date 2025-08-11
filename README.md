@@ -72,6 +72,7 @@ True AI              8      166
 - llama identified ~2000 features, only 4 of which had an importance score > 0.015
 - the accuracy roughly decreases with respect to text length:
 ```
+(statistics shown for gpt-2)
    Accuracy by Text-Length Category:
     Category '300-399':
       Number of samples = 118
@@ -92,6 +93,7 @@ True AI              8      166
 - Test more models
 - Ensemble models: classify using last hidden states from multiple models and take a weighted vote
 - True next word (baseline startegy) but with more split points, and compare with multiple models if computational resources allow
+
 
 
 
