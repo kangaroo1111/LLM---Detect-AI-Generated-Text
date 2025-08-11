@@ -13,7 +13,6 @@ Datasets:
 Methods:
 - Output next word probabilities from pretrained LLM and compare to true next word 
   - probability associated to the true next word is the probability that an LLM generated the text 
-- Directly use a classification model (eg Mistral for text classification) and train it to classify human written vs AI generated 
 - Extract last hidden state from pretrained LLM and feed it through a Random Forest Classifier 
   - Self-attention works such that the last hidden state will contain information about the whole text 
 
@@ -40,6 +39,7 @@ Future Strategies:
 - Directly use a classification model (eg Mistral for text classification) and train it to classify human written vs AI generated
 - Ensemble models: classify using last hidden states from multiple models and take a weighted vote
 - True next word (baseline startegy) but with more split points, and compare with multiple models if computational resources allow
+
 
 
 
