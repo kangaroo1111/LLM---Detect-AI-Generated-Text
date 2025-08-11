@@ -18,7 +18,7 @@ We explore a baseline strategy based on beaming, and conduct a survey of the eff
 
 ## Results: 
 ### Aproach 1: Next word probablilities 
- Using only gpt-2 and 10 split points per text, we get the following results: 
+ Using only **gpt-2** and **10 split points** per text, we get the following results: 
  ```
  Test Accuracy: 0.6225 
  Classification Report: 
@@ -92,6 +92,7 @@ True AI              8      166
 - Test more models
 - Ensemble models: classify using last hidden states from multiple models and take a weighted vote
 - True next word (baseline startegy) but with more split points, and compare with multiple models if computational resources allow
+
 
 
 
