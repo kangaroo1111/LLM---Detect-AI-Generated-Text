@@ -88,11 +88,12 @@ True AI              8      166
       Accuracy = 0.9241
 ```
 
-## Future Strategies: 
+## Future Directions: 
 - Directly use a classification model (eg Mistral for text classification) and train it to classify human written vs AI generated
 - Test more models
 - Ensemble models: classify using last hidden states from multiple models and take a weighted vote
 - True next word (baseline startegy) but with more split points, and compare with multiple models if computational resources allow
+
 
 
 
